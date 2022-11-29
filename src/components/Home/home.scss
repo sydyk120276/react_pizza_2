@@ -1,0 +1,10 @@
+.home {
+  display: flex;
+  justify-content: center;
+  background: rgb(228, 228, 150);
+    &__container {
+      width: rem(1440);
+      height: 100%;
+
+    }
+}

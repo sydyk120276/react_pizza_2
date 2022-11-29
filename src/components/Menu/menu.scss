@@ -1,0 +1,73 @@
+.menu {
+  display: flex;
+  justify-content: center;
+
+  &__container {
+    width: rem(1340);
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+
+  }
+  &__array {
+    padding-left: rem(67);
+    display: flex;
+    gap: rem(9);
+    &-button {
+      background: #F9F9F9;
+      border-radius: rem(30);
+      padding: rem(15) rem(30);
+      border: none;
+      cursor: pointer;
+    }
+  }
+  .active {
+    background: #282828;
+    border-radius: rem(30);
+    padding: rem(15) rem(30);
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  .sort_active {
+      font-style: normal;
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: rem(17);
+      letter-spacing: 0.015em;
+      color: #FE5F1E;
+  }
+  &__sort {
+    display: flex;
+    gap: rem(9);
+    align-items: center;
+    padding-right: rem(36);
+    &-option {
+      font-style: normal;
+      font-weight: 400;
+      font-size: rem(14);
+      line-height: rem(17);
+      letter-spacing: 0.015em;
+      color: #000000;
+      border: none;
+      width: rem(110);
+    }
+    &-select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      outline: none;
+      width: 110px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: rem(17);
+      letter-spacing: 0.015em;
+      color: #FE5F1E;
+    }
+    &-select::-ms-expand {
+      display: none;
+    }
+  }
+}

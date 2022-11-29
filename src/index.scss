@@ -1,0 +1,29 @@
+@use "sass:math";
+
+body {
+  margin: 0;
+  font-family: 'Proxima Nova', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Proxima Nova', 'Courier New',
+    monospace;
+}
+
+@function rem($px) {
+  $result: math.div($px, 16) + rem;
+  @return $result;
+}
+
+@import "../src/components/Header/header.scss";
+@import "./App.scss";
+@import "../src/components/Menu/menu.scss";
+@import "../src/components/Main/main.scss";
+@import "../src/components/Card/card.scss";
+@import "../src/components/Home/home.scss";
+@import "../src/components/Basket/basket.scss";
+@import "../src/components/Basket/basket-item.scss";

@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem(62);
+
+  &__container {
+    width: rem(1340);
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(96);
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(32);
+    line-height: rem(39);
+    letter-spacing: 0.01em;
+    color: #000000;
+    padding: rem(35) 0 rem(35) rem(67);
+  }
+  &__body {
+   display: flex;
+   flex-wrap: wrap;
+   gap: rem(35);
+   padding-left: rem(82);
+  }
+}
