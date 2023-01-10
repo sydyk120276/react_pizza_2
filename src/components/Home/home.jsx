@@ -137,15 +137,23 @@ const items = [
 
 const Home = () => {
   const [newItems, setNewItems] = useState(items);
+  const arrayOnBasket = JSON.parse(localStorage.getItem("hello"));
+  console.log("arrayOnBasket", arrayOnBasket);
 
     const onClickAmountButton = (id) => {
-      const amoutBasket = items
-        .map((elem) => {
-          if (elem.id === id) {
-            elem.amount++;
-          }
-          return elem;
-        })
+      const amoutBasket = !arrayOnBasket
+        ? items.map((elem) => {
+            if (elem.id === id) {
+              elem.amount++;
+            }
+            return elem;
+          })
+        : arrayOnBasket.map((elem) => {
+            if (elem.id === id) {
+              elem.amount++;
+            }
+            return elem;
+          });
       setNewItems(amoutBasket);
       localStorage.setItem(
         "hello",
@@ -160,7 +168,7 @@ const Home = () => {
         <Header />
         <Menu />
         <Main
-          items={newItems}
+          cards={newItems}
           onClickAmountButton={onClickAmountButton}
         />
       </div>

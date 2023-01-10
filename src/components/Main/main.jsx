@@ -3,41 +3,37 @@ import React from 'react'
 import Card from '../Card/card';
 
 const Main = ({
-  items,
-  setCount,
+  cards,
   onClickAmountButton,
 }) => {
+  const basketItems = JSON.parse(localStorage.getItem("hello"));
+  console.log("basssssssssssssssss", basketItems);
+  console.log("cards", cards);
 
-const basketItems = JSON.parse(localStorage.getItem("hello"));
-console.log("basssssssssssssssss", basketItems);
-
-const itemsNullAmount = items.map((elem) => {
-  return { ...elem, amount: 0}
-})
-
+  // const itemsNullAmount = cards.map((elem) => {
+  //   return { ...elem, amount: 0}
+  // })
 
   return (
     <section className="main">
       <div className="main__container">
         <span className="main__title">Все пиццы</span>
         <div className="main__body">
-          {!!basketItems
+          {basketItems
             ? basketItems.map((item) => {
                 return (
                   <Card
                     key={item.id}
                     item={item}
-                    setAmount={setCount}
                     onClickAmountButton={onClickAmountButton}
                   />
                 );
               })
-            : itemsNullAmount.map((item) => {
+            : cards.map((item) => {
                 return (
                   <Card
                     key={item.id}
                     item={item}
-                    setAmount={setCount}
                     onClickAmountButton={onClickAmountButton}
                   />
                 );
