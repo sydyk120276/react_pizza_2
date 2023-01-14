@@ -29,24 +29,14 @@ const deleteItemsOnBasket = () => {
 }
 
 const handlerRemoveItem = (id) => {
-      localStorage.setItem(
-        "hello",
-        JSON.stringify(
-          items.map((elem) => {
-            if (elem.id === id) {
-              elem.amount = 0;
-            }
-            return elem;
-          })
-        )
-      );
-
-  const arrayLengt = items.filter((el) => el.id !== id);
-        setItems(arrayLengt);
-    if (arrayLengt.filter((item) => item.amount > 0).length < 1) {
-      localStorage.clear();
-    }
-     console.log("itemswwwwwwwwwww", arrayLengt.length);
+     const itemRemove = items.map((elem) => {
+       if (elem.id === id) {
+         elem.amount = 0;
+       }
+       return elem;
+     });
+     setItems(itemRemove);
+      localStorage.setItem("hello", JSON.stringify(itemRemove));
 }
 const handlerIncrementItem = (id) => {
    setItems(items.map((el) => {

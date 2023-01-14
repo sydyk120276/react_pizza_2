@@ -139,25 +139,27 @@ const Home = () => {
   const [newItems, setNewItems] = useState(items);
   const arrayOnBasket = JSON.parse(localStorage.getItem("hello"));
   console.log("arrayOnBasket", arrayOnBasket);
+  console.log("items", newItems);
 
     const onClickAmountButton = (id) => {
-      const amoutBasket = !arrayOnBasket
-        ? items.map((elem) => {
-            if (elem.id === id) {
-              elem.amount++;
-            }
-            return elem;
-          })
-        : arrayOnBasket.map((elem) => {
-            if (elem.id === id) {
-              elem.amount++;
-            }
-            return elem;
-          });
-      setNewItems(amoutBasket);
+      const amountBasket = arrayOnBasket === undefined || arrayOnBasket === null
+          ? items.map((elem) => {
+              if (elem.id === id) {
+                elem.amount++;
+              }
+              return elem;
+            })
+          : arrayOnBasket.map((elem) => {
+              if (elem.id === id) {
+                elem.amount++;
+              }
+              return elem;
+            });
+
+      setNewItems(amountBasket);
       localStorage.setItem(
         "hello",
-        JSON.stringify(amoutBasket)
+        JSON.stringify(amountBasket)
       );
 
     };
@@ -167,10 +169,7 @@ const Home = () => {
       <div className="home__container">
         <Header />
         <Menu />
-        <Main
-          cards={newItems}
-          onClickAmountButton={onClickAmountButton}
-        />
+        <Main newItems={newItems} onClickAmountButton={onClickAmountButton} />
       </div>
     </div>
   );

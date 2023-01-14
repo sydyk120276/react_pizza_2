@@ -3,14 +3,14 @@ import React from 'react'
 import Card from '../Card/card';
 
 const Main = ({
-  cards,
+  newItems,
   onClickAmountButton,
 }) => {
   const basketItems = JSON.parse(localStorage.getItem("hello"));
   console.log("basssssssssssssssss", basketItems);
-  console.log("cards", cards);
+  console.log("newItems", newItems);
 
-  // const itemsNullAmount = cards.map((elem) => {
+  // const itemsNullAmount = newItems.map((elem) => {
   //   return { ...elem, amount: 0}
   // })
 
@@ -29,7 +29,7 @@ const Main = ({
                   />
                 );
               })
-            : cards.map((item) => {
+            : newItems.map((item) => {
                 return (
                   <Card
                     key={item.id}
